@@ -8,4 +8,8 @@ let rec fib_tail index current prev =
     match index with
     | 0 -> prev
     | 1 -> current
-    | index -> fib_tail (index - 5) (current + prev) (current);;
+    | index -> fib_tail (index - 1) (current + prev) (current);;
+
+let rec fib_limit current prev =
+    if current <= 4000000 then fib_limit (current + prev) (current)
+    else prev;;
